@@ -1,0 +1,31 @@
+From the command prompt go into this folder
+
+Use the following command to run the screen test
+
+
+RunSiteMap.bat ENV DEPLOYMENTNAME RUNTYPE COMPARE_ENVIRONMENT
+
+ENV:
+env should be either of prod, test, dev-07, dev-08, dev-09, dev-10, dev-17.
+This variable is case sensitive. Should be matched exactly.
+
+
+DEPLOYMENTNAME:
+Name of the deployment. This should be unique for each deployment or else it will be compared with the previous run of same deployment name. This should be the same for the baseline and compare runs.
+
+
+RUNTYPE:
+Mention if the current run is baseline or compare. 
+This variable is case sensitive. Should be matched exactly.
+
+
+COMPARE_ENVIRONMENT
+This is an optional variable. If the RUNTYPE is compare, this variable indicates which environment should we compare to. 
+This variable should be either of prod, test, dev-07, dev-08, dev-09, dev-10, dev-17.
+Default value is prod and if we want to compare lower environment to lower environment, like dev-07 to dev-07, this variable should be dev-07.
+
+EXAMPLE
+If your baseline is production and your comparitive evironment is dev-07, and your deployment name is uniquename you would use:
+
+RunSiteMap prod Prod-Baseline-20230216 baseline
+RunSiteMap dev-07 Prod-Baseline-20230216 compare prod

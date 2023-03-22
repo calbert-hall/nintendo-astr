@@ -1,0 +1,22 @@
+<job concurrent_runs="20">
+  <load>configurations.xml</load>
+  <batch name="exeVar[batchName]" id="exeVar[batchId]" dontClose="true">
+    <test appname="exeVar[appName]">
+      <configurations names="exeVar[configName]" />
+      <SmartSplit to="sitemap url groups" max="2" path="exeVar[sitemapUrl]" maxAttempts="3"/>
+      <execute>
+        <action type="crawl" from="sitemap.xml file" createSeparateTests="true" path="exeVar[sitemapUrl]">
+          <foreach>
+            <action type="function-replace" in="exp[%url%]" replace="exeVar[prodUrl]" with="" OutputVariable="testNameString" />
+            <action type="function-replace" in="exp[%url%]" replace="https://" with="exeVar[protocol]" OutputVariable="newString" />
+            <action type="function-replace" in="exp[%newString%]" replace=".phs.org" with="exeVar[urlString]" OutputVariable="finalString" />
+            <action type="navigate">exp[%url%]</action>
+            <action type="forcepageload" />
+
+            <action type="check" target="window" stepName="exp[%finalString%]" testName="exp[%testNameString%]" fullPage="true" deleteOn="exeVar[deleteOnFinish]" createSeparateTests="true"></action>
+          </foreach>
+        </action>
+      </execute>
+    </test>
+  </batch>
+</job>

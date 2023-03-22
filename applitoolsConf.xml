@@ -1,0 +1,8 @@
+<settings>
+	<!--<apikey>Env[APPLITOOLS_API_KEY]</apikey> -->
+	<apikey>VJMt4z4djBoqW40fclJgEpLGuwGppgZ98m5wtUuWhru0110</apikey>
+	<MatchLevel>exeVar[matchLevel]</MatchLevel>
+	<!--<Branch>exeVar[envName]</Branch>
+	<baselineBranch>exeVar[baselineBranch]</baselineBranch>-->
+	<SaveFailedTests>exeVar[saveFailedTests]</SaveFailedTests>
+</settings>

@@ -1,0 +1,5 @@
+1. API Key set in multiple configs, only needs to be set in env script. 
+2. Consolidated the various Applitools config files since they're already dynamic from parameters. Removed the various config settings in RunSiteMap, but still allowing different configs to be passed in. 
+3. Included "deleteOn" functionality for baseline updates. This encourages updates and compares to be run in the same execution / batch. 
+4. setSaveFailedTests now defaults to "false", as this is the bet practice for any non-baseline update behavior. 
+5. Changed grouping numbers (sitmap url groups -> 2) and run commands (start) to expedite performance. 

@@ -1,0 +1,24 @@
+<job concurrent_runs="20">
+	<load>configurations.xml</load>
+	<batch name="Nintendo - Core Sites Run" notifyOnCompletion = "false" id="exeVar[batchId]" dontClose="true">
+		<test appname="Nintendo" testname="Core Sites">
+			<property name="language" value="exeVar[siteLanguage]" />
+			<configurations names="grid" />
+			<SmartSplit to="sitemap url groups" max="2" path="sitemap.xml" maxAttempts="5"/>
+			<execute>
+				<action type="crawl" from="sitemap.xml file" createSeparateTests="true" path="sitemap.xml">
+					<foreach>
+						<action type="forcepageload" />
+						<action type="sleep">10000</action>
+						<action type="function-replace" in="exp[%url%]" replace=".com" with="exeVar[sitemapUrl]" OutputVariable="newUrl"/>
+						<action type="navigate">exp[%newUrl%]</action>
+                        			<action type="check" testName="exp[%url%]" stepName="exp[%newUrl%]" target="window" deleteOn="exeVar[deleteOnFinish]"  ignoreDisplacementDiffs="true" fullPage="true" useDom="true" enablePatterns="true" createSeparateTests="true" beforeRenderScreenshotHook="if(typeof customElements != 'undefined'){ s = document.createElement('script'); s.innerHTML = &quot;['styled-select', 'styled-button', 'tile-slider', 'heading-link-block', 'recommendation-slider', 'game-tile', 'article-tile'].forEach(name => customElements.define(name, class extends HTMLElement { }))&quot;; document.body.appendChild(s);} document.querySelectorAll('game-tile').forEach(c => c.style.opacity = 1);let elem = document.querySelector('.nclood-nav-utility-bar');if (elem) { elem.style.position = 'absolute'}">
+							<add type="visualGridOption" key="polyfillAdoptedStyleSheets" value="true" />
+							<add type="gridLayoutBreakpoints" viewportWidthValue="all" />
+						</action>
+					</foreach>
+				</action> 
+			</execute>
+		</test>
+	</batch>
+</job>
