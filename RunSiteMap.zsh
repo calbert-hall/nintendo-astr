@@ -17,4 +17,4 @@ java -jar ApplitoolsSimpleTestRunner.jar nintendo-job.xml "-var[saveFailedTests,
 compareEnv=.com/es-mx
 java -jar ApplitoolsSimpleTestRunner.jar nintendo-job.xml "-var[saveFailedTests,false]" "-var[deleteOnFinish,false]" "-var[matchLevel,Layout]" "-var[sitemapUrl,$compareEnv]" "-var[siteLanguage, es-mx]" "-var[batchId,$batchId]" 
 
-curl -v --location --request DELETE "https://eyes.applitools.com/api/sessions/batches/$batchId/close/bypointerid?apiKey=$APPLITOOLS_API_KEY"
+curl -v --location --request DELETE "https://eyes.applitools.com/api/sessions/batches/$batchId/close/bypointerid?apiKey=$APPLITOOLS_API_KEY"  
