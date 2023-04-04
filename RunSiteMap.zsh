@@ -1,7 +1,7 @@
 saveFailedTests=true
 baselineEnv=.com
 compareEnv=.com/fr-ca
-batchId=$RANDOM
+batchId=$(openssl rand -base64 16)
 
 echo "batch Id:"
 echo $batchId

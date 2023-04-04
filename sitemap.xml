@@ -1,10 +1,9 @@
 <sitemap>
 	<loc>https://www.nintendo.com/store/</loc> <!-- uat6 not working for me-->
-	<loc>https://www.nintendo.com/games</loc>
-	<loc>https://www.nintendo.com/games/game-guide</loc>
-	<loc>https://www.nintendo.com/games/sales-and-deals</loc>
+	<loc>https://www.nintendo.com/store/games</loc>
+	<loc>https://www.nintendo.com/store/sales-and-deals</loc>
 	<loc>https://www.nintendo.com/switch</loc>
 	<loc>https://www.nintendo.com/switch/buy-now</loc> 
-	<loc>https://www.nintendo.com/games/detail/among-us-switch/</loc>
-	<loc>https://www.nintendo.com/games/detail/xenoblade-chronicles-definitive-edition-switch</loc>
+	<loc>https://www.nintendo.com/store/products/among-us-switch/</loc>
+	<loc>https://www.nintendo.com/store/products/xenoblade-chronicles-definitive-edition-switch</loc>
 </sitemap>
